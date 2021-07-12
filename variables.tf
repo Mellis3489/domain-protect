@@ -25,7 +25,7 @@ variable "external_id" {
 
 variable "schedule" {
   description = "schedule for running domain-protect, e.g. 24 hours, 60 minutes"
-  default     = "30 minutes"
+  default     = "60 minutes"
 }
 
 variable "lambdas" {
