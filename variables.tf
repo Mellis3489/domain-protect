@@ -5,12 +5,12 @@ variable "project" {
 
 variable "region" {
   description = "AWS region to deploy Lambda functions"
-  default     = "eu-west-1"
+  default     = "us-east-1"
 }
 
 variable "org_primary_account" {
   description = "The AWS account number of the organization primary account"
-  default     = ""
+  default     = "267462678571"
 }
 
 variable "security_audit_role_name" {
@@ -25,7 +25,7 @@ variable "external_id" {
 
 variable "schedule" {
   description = "schedule for running domain-protect, e.g. 24 hours, 60 minutes"
-  default     = "24 hours"
+  default     = "60 minutes"
 }
 
 variable "lambdas" {
