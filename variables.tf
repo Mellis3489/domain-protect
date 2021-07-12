@@ -10,7 +10,7 @@ variable "region" {
 
 variable "org_primary_account" {
   description = "The AWS account number of the organization primary account"
-  default     = "267462678571"
+  default     = "352339134709"
 }
 
 variable "security_audit_role_name" {
