@@ -88,7 +88,7 @@ def lambda_handler(event, context):
                             #print(json.dumps(hosted_zones, sort_keys=True, indent=2, default=json_serial))
                             for hosted_zone in hosted_zones:
                                 if not hosted_zone['Config']['PrivateZone']:
-                                    time.sleep(1)
+                                    time.sleep(.5)
                                     print("Searching for Elastic Beanstalk alias records in hosted zone %s" % (hosted_zone['Name']) )
                                     try:
                                         paginator_records = client.get_paginator('list_resource_record_sets')
