@@ -3,6 +3,7 @@ import os, boto3
 import logging
 import json
 import dns.resolver
+import time
 
 from botocore.exceptions import ClientError
 from datetime import datetime
@@ -87,6 +88,7 @@ def lambda_handler(event, context):
                             #print(json.dumps(hosted_zones, sort_keys=True, indent=2, default=json_serial))
                             for hosted_zone in hosted_zones:
                                 if not hosted_zone['Config']['PrivateZone']:
+                                    time.sleep(1)
                                     print("Searching for Elastic Beanstalk alias records in hosted zone %s" % (hosted_zone['Name']) )
                                     try:
                                         paginator_records = client.get_paginator('list_resource_record_sets')
