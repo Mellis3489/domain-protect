@@ -2,7 +2,7 @@ resource "aws_cloudwatch_event_rule" "scheduled_event" {
   count               = length(var.lambda_function_names)
   name                = "${var.project}-${var.lambda_function_names[count.index]}"
   description         = "Triggers ${var.project} lambda functions according to schedule"
-  schedule_expression = "cron(0 ${count.index} * * ? *))"
+  schedule_expression = "cron(0 ${count.index} * * ? *)"
 }
 
 resource "aws_cloudwatch_event_target" "scheduled_event" {
